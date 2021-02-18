@@ -39,7 +39,7 @@ function askQuestion() {
 
     let score = 0;
     for (i = 0; i < questions.length; i++) {
-       if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
+       if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
           score++;
     }
   }
