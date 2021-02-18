@@ -28,21 +28,15 @@ function askQuestion() {
   //let score = 0;
   for (i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(questions[i]);
-
     if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
       score++
     }
   }
 }
 
-
-
-
-
   function gradeQuiz(candidateAnswers) {
 
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
     console.log(`Candidate Name: ${candidateName}`);
     console.log(`1) "Who was the first american woman in space?"\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
     console.log(`2) "True or false: 5000 meters == 5 kilometers."\nyour Answer: ${candidateAnswers[1]}\ncorrect Answer: ${correctAnswers[1]}`);
@@ -52,7 +46,7 @@ function askQuestion() {
 
     console.log(`5) "What is the minimum crew size for the ISS?"\nyour Answer: ${candidateAnswers[4]}\ncorrect Answer: ${correctAnswers[4]}`);
 
-    grade = score / questions.length * 100
+    grade = (score / questions.length) * 100
     if (grade > 80) {
       console.log(`>>> overall grade: ${grade}`);
       console.log(`status: pass`);
