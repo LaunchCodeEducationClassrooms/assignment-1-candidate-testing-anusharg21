@@ -58,7 +58,7 @@ function askQuestion() {
     let grade1 = score / questions.length * 100;
     console.log(score);
     console.log(questions.length);
-    if(grade1 > 80) {
+    if(grade1 >= 80) {
       console.log(" overall grade: " + grade1 + "%");
       console.log("status: pass");
     } else if (grade1 < 80) {
