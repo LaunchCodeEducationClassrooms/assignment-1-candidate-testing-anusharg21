@@ -33,6 +33,7 @@ function askQuestion() {
       score1++;
     }
   }
+  console.log("askQ: " + score1);
 }
 
   function gradeQuiz(candidateAnswers) {
