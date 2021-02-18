@@ -49,10 +49,10 @@ function askQuestion() {
     grade = score / questions.length * 100
 
     if (grade > 80) {
-      console.log(">>> overall grade: ${grade}");
+      console.log(` overall grade: ${grade}1`;
       console.log("status: pass");
     } else if (grade < 80) {
-      console.log(">>>overall grade: ${grade}<<<");
+      console.log(`overall grade: ${grade}`);
       console.log(">>> status: failed <<<");
     }
   }
