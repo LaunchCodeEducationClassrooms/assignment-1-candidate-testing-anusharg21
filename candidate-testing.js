@@ -26,6 +26,7 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //let score = 0;
+  score = 0;
   for (i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(questions[i]);
     if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
