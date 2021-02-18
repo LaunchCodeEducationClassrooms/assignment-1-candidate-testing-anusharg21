@@ -45,7 +45,7 @@ function askQuestion() {
   }
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
     console.log(`Candidate Name: ${candidateName}`);
-    console.log(`1) "Who was the first american woman in space?     "\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
+    console.log(`1) "Who was the first american woman in space? "\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
     console.log(`2) "True or false: 5000 meters == 5 kilometers."\nyour Answer: ${candidateAnswers[1]}\ncorrect Answer: ${correctAnswers[1]}`);
     console.log(`3) "(5 + 3)/2 * 10 = ?"\nyour Answer: ${candidateAnswers[2]}\ncorrect Answer: ${correctAnswers[2]}`);
 
@@ -54,16 +54,17 @@ function askQuestion() {
     console.log(`5) "What is the minimum crew size for the ISS?"\nyour Answer: ${candidateAnswers[4]}\ncorrect Answer: ${correctAnswers[4]}`);
 
     let grade = score / questions.length * 100;
-    console.log(score);
-    console.log(questions.length);
+    //console.log(score);
+    //console.log(questions.length);
     if(grade >= 80) {
-      console.log(" overall grade: " + grade + "%");
-      console.log("status: pass");
+      console.log(">>>overall grade: "+ grade +" %(" + score + " out of " + questions.length + " )<<<");
+      console.log(">>>status: pass<<<");
     } else if (grade < 80) {
-      console.log(" overall grade: " + grade + "%");
+      console.log(">>>overall grade: "+ grade +" %(" + score + " out of " + questions.length + " )<<<");
       console.log(">>> status: failed <<<");
     }
   }
+
 
  function runProgram() {
       askForName();
