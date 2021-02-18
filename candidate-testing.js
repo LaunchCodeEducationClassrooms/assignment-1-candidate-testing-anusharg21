@@ -26,23 +26,21 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //let score = 0;
-  console.log("In Ask Question ");
-  for (i = 0; i < questions.length; i++) {
+   for (i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(questions[i]);
    // if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase())
     //if (candidateAnswers[i] == correctAnswers[i]) {
       //score1++;
     //}
   }
-  console.log("askQ: " + score1);
 }
 
   function gradeQuiz(candidateAnswers) {
 
     let score = 0;
     for (i = 0; i < questions.length; i++) {
-        if (candidateAnswers[i] == correctAnswers[i]) {
-      score++;
+       if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
+          score++;
     }
   }
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -55,14 +53,14 @@ function askQuestion() {
 
     console.log(`5) "What is the minimum crew size for the ISS?"\nyour Answer: ${candidateAnswers[4]}\ncorrect Answer: ${correctAnswers[4]}`);
 
-    let grade1 = score / questions.length * 100;
+    let grade = score / questions.length * 100;
     console.log(score);
     console.log(questions.length);
-    if(grade1 >= 80) {
-      console.log(" overall grade: " + grade1 + "%");
+    if(grade >= 80) {
+      console.log(" overall grade: " + grade + "%");
       console.log("status: pass");
-    } else if (grade1 < 80) {
-      console.log(" overall grade: " + grade1 + "%");
+    } else if (grade < 80) {
+      console.log(" overall grade: " + grade + "%");
       console.log(">>> status: failed <<<");
     }
   }
