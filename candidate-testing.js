@@ -8,7 +8,7 @@ let candidateName = "";
 let question = "Who was the first american woman in space?";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space?","True or false: 5000 meters == 5 kilometers.","(5 + 3)/2 * 10 = ?","Given the array [8,'Orbit','Trajectory',45],what entry is at index 2?","What is the minimum crew size for the ISS?"];
+let questions = ["Who was the first American woman in space? ","True or false: 5000 meters == 5 kilometers. ","(5 + 3)/2 * 10 = ? ","Given the array [8,'Orbit','Trajectory',45],what entry is at index 2? ","What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 let score1 = 0;
@@ -40,7 +40,7 @@ function askQuestion() {
 
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
     console.log(`Candidate Name: ${candidateName}`);
-    console.log(`1) "Who was the first american woman in space?"\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
+    console.log(`1) "Who was the first american woman in space?     "\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
     console.log(`2) "True or false: 5000 meters == 5 kilometers."\nyour Answer: ${candidateAnswers[1]}\ncorrect Answer: ${correctAnswers[1]}`);
     console.log(`3) "(5 + 3)/2 * 10 = ?"\nyour Answer: ${candidateAnswers[2]}\ncorrect Answer: ${correctAnswers[2]}`);
 
@@ -79,5 +79,5 @@ function askQuestion() {
       correctAnswers: correctAnswers,
       candidateAnswers: candidateAnswers,
       gradeQuiz: gradeQuiz,
-      runProgram: runProgram,
+      runProgram: runProgram
     }
