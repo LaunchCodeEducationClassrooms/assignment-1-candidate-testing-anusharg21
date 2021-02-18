@@ -38,9 +38,11 @@ function askQuestion() {
 }
 
   function gradeQuiz(candidateAnswers) {
+
+    let score = 0;
     for (i = 0; i < questions.length; i++) {
         if (candidateAnswers[i] == correctAnswers[i]) {
-      score1++;
+      score++;
     }
   }
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -53,8 +55,8 @@ function askQuestion() {
 
     console.log(`5) "What is the minimum crew size for the ISS?"\nyour Answer: ${candidateAnswers[4]}\ncorrect Answer: ${correctAnswers[4]}`);
 
-    let grade1 = score1 / questions.length * 100;
-    console.log(score1);
+    let grade1 = score / questions.length * 100;
+    console.log(score);
     console.log(questions.length);
     if(grade1 > 80) {
       console.log(" overall grade: " + grade1 + "%");
