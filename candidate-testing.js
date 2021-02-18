@@ -51,7 +51,7 @@ function askQuestion() {
     if(grade1 > 80) {
       console.log(" overall grade: " + grade1 + "%");
       console.log("status: pass");
-    } else if (grade < 80) {
+    } else if (grade1 < 80) {
       console.log(" overall grade: " + grade1 + "%");
       console.log(">>> status: failed <<<");
     }
