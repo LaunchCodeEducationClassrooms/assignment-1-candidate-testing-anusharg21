@@ -30,17 +30,19 @@ function askQuestion() {
   for (i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(questions[i]);
    // if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase())
-    if (candidateAnswers[i] == correctAnswers[i]) {
-      score1++;
-    }
+    //if (candidateAnswers[i] == correctAnswers[i]) {
+      //score1++;
+    //}
   }
   console.log("askQ: " + score1);
 }
 
   function gradeQuiz(candidateAnswers) {
-
-    askQuestion();
-
+    for (i = 0; i < questions.length; i++) {
+        if (candidateAnswers[i] == correctAnswers[i]) {
+      score1++;
+    }
+  }
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
     console.log(`Candidate Name: ${candidateName}`);
     console.log(`1) "Who was the first american woman in space?     "\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
@@ -67,6 +69,7 @@ function askQuestion() {
       askForName();
       // TODO 1.1c: Ask for candidate's name //
       console.log(`Hello ${candidateName} !`);
+      askQuestion();
       gradeQuiz(this.candidateAnswers);
   }
 
