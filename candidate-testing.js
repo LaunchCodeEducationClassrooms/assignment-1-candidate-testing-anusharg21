@@ -39,6 +39,8 @@ function askQuestion() {
 
   function gradeQuiz(candidateAnswers) {
 
+    askQuestion();
+
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
     console.log(`Candidate Name: ${candidateName}`);
     console.log(`1) "Who was the first american woman in space?     "\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
@@ -65,7 +67,6 @@ function askQuestion() {
       askForName();
       // TODO 1.1c: Ask for candidate's name //
       console.log(`Hello ${candidateName} !`);
-      askQuestion();
       gradeQuiz(this.candidateAnswers);
   }
 
