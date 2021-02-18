@@ -48,7 +48,8 @@ function askQuestion() {
     console.log(`5) "What is the minimum crew size for the ISS?"\nyour Answer: ${candidateAnswers[4]}\ncorrect Answer: ${correctAnswers[4]}`);
 
     let grade1 = score / questions.length * 100;
-    console.log(grade1);
+    console.log(score);
+    console.log(questions.length);
     if(grade1 > 80) {
       console.log(" overall grade: " + grade1 + "%");
       console.log("status: pass");
