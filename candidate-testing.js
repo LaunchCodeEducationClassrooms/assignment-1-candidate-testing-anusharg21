@@ -28,7 +28,8 @@ function askQuestion() {
   //let score = 0;
   for (i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(questions[i]);
-    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
+   // if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase())
+    if (candidateAnswers[i] == correctAnswers[i]) {
       score1++;
     }
   }
