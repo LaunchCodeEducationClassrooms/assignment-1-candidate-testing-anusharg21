@@ -8,63 +8,65 @@ let candidateName = "";
 let question = "Who was the first american woman in space?";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["Who was the first American woman in space? ","True or false: 5000 meters == 5 kilometers. ","(5 + 3)/2 * 10 = ? ","Given the array [8,'Orbit','Trajectory',45],what entry is at index 2? ","What is the minimum crew size for the ISS? "];
+let questions = ['Who was the first American woman in space? ','True or false: 5000 meters == 5 kilometers.','(5 + 3)/2 * 10 = ? ',"Given the array [8,'Orbit','Trajectory',45],what entry is at index 2? ",'What is the minimum crew size for the ISS? '];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
-let score1 = 0;
-let grade = 0;
 
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  const input = require('readline-sync');
   candidateName = input.question("enter your Name: ");
 
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  //let score = 0;
-   for (i = 0; i < questions.length; i++) {
-    candidateAnswers[i] = input.question(questions[i]);
-   // if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase())
-    //if (candidateAnswers[i] == correctAnswers[i]) {
-      //score1++;
-    //}
+  let i=0;
+  while(i<questions.length)
+  {
+   candidateAnswers.push(input.question(questions[i]));
+   console.log(`your Answer: ${candidateAnswers[i]}\ncorrect Answer: ${correctAnswers[i]}\n`)
+  i++;
   }
-}
+ }
 
   function gradeQuiz(candidateAnswers) {
-
-    let score = 0;
-    for (i = 0; i < questions.length; i++) {
-       if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-          score++;
-    }
-  }
     // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-    console.log(`Candidate Name: ${candidateName}`);
-    console.log(`1) "Who was the first american woman in space? "\nyour Answer: ${candidateAnswers[0]}\ncorrect Answer: ${correctAnswers[0]}`);
-    console.log(`2) "True or false: 5000 meters == 5 kilometers."\nyour Answer: ${candidateAnswers[1]}\ncorrect Answer: ${correctAnswers[1]}`);
-    console.log(`3) "(5 + 3)/2 * 10 = ?"\nyour Answer: ${candidateAnswers[2]}\ncorrect Answer: ${correctAnswers[2]}`);
-
-    console.log(`4) "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?"\nyour Answer: ${candidateAnswers[3]}\ncorrect Answer: ${correctAnswers[3]}`);
-
-    console.log(`5) "What is the minimum crew size for the ISS?"\nyour Answer: ${candidateAnswers[4]}\ncorrect Answer: ${correctAnswers[4]}`);
-
-    let grade = score / questions.length * 100;
-    //console.log(score);
-    //console.log(questions.length);
-    if(grade >= 80) {
-      console.log(">>>overall grade: "+ grade +" %(" + score + " out of " + questions.length + " )<<<");
-      console.log(">>>status: pass<<<");
-    } else if (grade < 80) {
-      console.log(">>>overall grade: "+ grade +" %(" + score + " out of " + questions.length + " )<<<");
-      console.log(">>> status: failed <<<");
+    let score=0;
+    if(candidateAnswers[0].toLowerCase() === correctAnswers[0].toLowerCase())
+    {
+      score+=1;
     }
-  }
+    if(candidateAnswers[1].toLowerCase() === correctAnswers[1].toLowerCase())
+    {
+      score+=1;
+    }
+    if(candidateAnswers[2].toLowerCase() === correctAnswers[2].toLowerCase())
+    {
+      score+=1;
+    }
+    if(candidateAnswers[3].toLowerCase() === correctAnswers[3].toLowerCase())
+    {
+      score+=1;
+    }
+    if(candidateAnswers[4].toLowerCase() === correctAnswers[4].toLowerCase())
+    {
+      score+=1;
+    }
+    let numOfQuestions = questions.length
+    let grade = score/numOfQuestions*100
 
+    if(grade<80)
+    {
+     console.log(`>>> Overall Grade: ${grade}% (${score} of ${questions.length} responses correct)<<<\n>>> Status: FAILED <<<`)
+    }
+    else
+    {
+      console.log(`>>>>Overall Grade: ${grade}% (${score} of ${questions.length} responses correct)<<<\n>>> status: PASSED <<<`)
+    }
+    return grade;
+  }
 
  function runProgram() {
       askForName();
